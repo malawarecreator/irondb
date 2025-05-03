@@ -2,7 +2,7 @@
 name = "irondb"
 version = "0.1.0"
 edition = "2024"
-repository = ""
+repository = "https://github.com/malawarecreator/irondb"
 authors = ["benjamin liu"]
 license = "MIT"
 description = "Key-value storage engine"
