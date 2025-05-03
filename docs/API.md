@@ -48,7 +48,7 @@ let db: Db<i32, i32> = Db::new(YOUR_ID (string));
 
 ### To add to a database:
 ```rs
-let db: Db<&'static str, &'static str> = Db::new("randomid");
+let mut db: Db<&'static str, &'static str> = Db::new("randomid");
 db.save(Dblock::new("key", "value"));
 ```
 
@@ -56,20 +56,20 @@ If you try to save a block that does not fit the TT constraints, you will get an
 
 ### To get and print a `Dblock` within a `Db`:
 ```rs
-let db: Db<&'static str, &'static str> = Db::new("randomid");
+let mut db: Db<&'static str, &'static str> = Db::new("randomid");
 db.save(Dblock::new("key", "value"));
 db.getbp("key");
 ```
 
 ### To get the `Dblock` object itself:
 ```rs
-let db: Db<&'static str, &'static str> = Db::new("randomid");
+let mut db: Db<&'static str, &'static str> = Db::new("randomid");
 db.save(Dblock::new("key", "value"));
 let block = db.getb("key");
 ```
 ### To remove a `Dblock` from a `Db`:
 ```rs
-let db: Db<&'static str, &'static str> = Db::new("randomid");
+let mut db: Db<&'static str, &'static str> = Db::new("randomid");
 db.save(Dblock::new("key", "value"));
 let block = db.remove("key")
 ```
