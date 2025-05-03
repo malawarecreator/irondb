@@ -14,9 +14,19 @@ mod tests {
     
     #[test]
     fn test_db_fmt() {
-        let mut db: Db<_, _> = Db::new("testdb");
+        let mut db: Db<i32, i32> = Db::new("testdb");
         db.save(Dblock::new(1, 2));
         db.getbp(1);
+
+    }
+
+    #[test]
+    fn test_db_getb() {
+        let mut db: Db<i32, i32> = Db::new("testdb");
+        db.save(Dblock::new(1, 2));
+        let block = db.getb(1).unwrap();
+        assert_eq!(block.data, 2);
+        assert_eq!(block.key, 1);
 
     }
 
